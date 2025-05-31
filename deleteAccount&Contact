@@ -1,0 +1,7 @@
+// Delete Contacts
+List<Contact> allContacts = [SELECT Id FROM Contact];
+Database.delete(allContacts, false); // 'false' = continue even if some fail
+
+// Delete Accounts
+List<Account> allAccounts = [SELECT Id FROM Account];
+Database.delete(allAccounts, false);

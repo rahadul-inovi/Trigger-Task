@@ -1,0 +1,9 @@
+List<Account> accounts = new List<Account>();
+for (Integer i = 0; i < 300; i++) {
+    accounts.add(new Account(Name = 'Acc ' + i));
+}
+insert accounts;
+
+// Query all related contacts
+List<Contact> contacts = [SELECT Id, AccountId FROM Contact WHERE AccountId IN :accounts];
+System.assertEquals(300, contacts.size());
